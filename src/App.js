@@ -23,8 +23,8 @@ import { getDataInterview } from './api'
 function App() {
   const query = useQuery()
   const [params, setParams] = useState({
-    url_origin_1: "",
-    url_origin_2: "",
+    url_origin_1: '',
+    url_origin_2: '',
   })
 
   const [dataInterview, setDataInterview] = useState(false)
@@ -59,6 +59,29 @@ function App() {
           <p>
             {row.name2}{' '}
             {row.validation_name ? (
+              <BsFillCheckCircleFill color="#63BA76" />
+            ) : (
+              <BsFillXCircleFill color="#db284e" />
+            )}
+          </p>
+        </>
+      ),
+    },
+    {
+      name: 'Date',
+      selector: (row) => (
+        <>
+          <p>
+            {row.date}{' '}
+            {row.validation_date ? (
+              <BsFillCheckCircleFill color="#63BA76" />
+            ) : (
+              <BsFillXCircleFill color="#db284e" />
+            )}
+          </p>
+          <p>
+            {row.date2}{' '}
+            {row.validation_date ? (
               <BsFillCheckCircleFill color="#63BA76" />
             ) : (
               <BsFillXCircleFill color="#db284e" />

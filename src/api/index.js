@@ -24,6 +24,12 @@ export const getDataInterview = async (params) => {
           item.name,
           respUrl2.data[key].name,
         ),
+        date: item.interview_date,
+        date2: respUrl2.data[key].interview_date,
+        validation_date: validationData(
+          item.interview_date,
+          respUrl2.data[key].interview_date,
+        ),
         procuration_image: item.procuration_image,
         procuration_image2: respUrl2.data[key].procuration_image,
         validation_procuration_image: validationData(
