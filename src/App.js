@@ -23,11 +23,12 @@ import { getDataInterview } from './api'
 function App() {
   const query = useQuery()
   const [params, setParams] = useState({
-    url_origin_1: null,
-    url_origin_2: null,
+    url_origin_1: "",
+    url_origin_2: "",
   })
 
   const [dataInterview, setDataInterview] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const columns = [
     {
@@ -208,6 +209,7 @@ function App() {
 
   useEffect(() => {
     if (query.get('url_origin_1') && query.get('url_origin_2')) {
+      setIsLoading(true)
       setParams({
         url_origin_1: query.get('url_origin_1'),
         url_origin_2: query.get('url_origin_2'),
@@ -217,6 +219,7 @@ function App() {
         url_origin_2: query.get('url_origin_2'),
       }).then((res) => {
         setDataInterview(res)
+        setIsLoading(false)
       })
     }
   }, [query])
@@ -269,10 +272,10 @@ function App() {
                 disabled={
                   !params.url_origin_1 ||
                   !params.url_origin_2 ||
-                  !dataInterview
+                  isLoading
                 }
               >
-                {dataInterview ? (
+                {!isLoading ? (
                   'Proses'
                 ) : (
                   <ReactLoading
@@ -292,7 +295,7 @@ function App() {
           <DataTable
             columns={columns}
             data={dataInterview || undefined}
-            progressPending={!dataInterview}
+            progressPending={isLoading}
             progressComponent={
               <ReactLoading
                 type="bars"
