@@ -95,7 +95,13 @@ function App() {
       selector: (row) => (
         <>
           <p>
-            {row.procuration_image}{' '}
+            <a
+              href={row.procuration_image}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {row.procuration_image}
+            </a>{' '}
             {row.validation_procuration_image ? (
               <BsFillCheckCircleFill color="#63BA76" />
             ) : (
@@ -103,7 +109,13 @@ function App() {
             )}
           </p>
           <p>
-            {row.procuration_image2}{' '}
+            <a
+              href={row.procuration_image2}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {row.procuration_image2}
+            </a>{' '}
             {row.validation_procuration_image ? (
               <BsFillCheckCircleFill color="#63BA76" />
             ) : (
@@ -118,7 +130,13 @@ function App() {
       selector: (row) => (
         <>
           <p>
-            {row.business_certificate_image}{' '}
+            <a
+              href={row.business_certificate_image}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {row.business_certificate_image}
+            </a>{' '}
             {row.validation_business_certificate_image ? (
               <BsFillCheckCircleFill color="#63BA76" />
             ) : (
@@ -126,7 +144,13 @@ function App() {
             )}
           </p>
           <p>
-            {row.business_certificate_image2}{' '}
+            <a
+              href={row.business_certificate_image2}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {row.business_certificate_image2}
+            </a>{' '}
             {row.validation_business_certificate_image ? (
               <BsFillCheckCircleFill color="#63BA76" />
             ) : (
