@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
 import {
-  BsLightningChargeFill,
   BsFillCheckCircleFill,
   BsFillXCircleFill,
+  BsFillStickiesFill,
 } from 'react-icons/bs'
 import { useQuery } from './utils'
 import {
@@ -251,7 +251,7 @@ function App() {
     <Container>
       <Row>
         <h3 style={{ textAlign: 'center' }}>
-          Compare Me <BsLightningChargeFill />
+          Compare Me <BsFillStickiesFill />
         </h3>
       </Row>
       <Row>
